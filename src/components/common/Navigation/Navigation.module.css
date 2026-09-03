@@ -1,0 +1,10 @@
+.list {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.highlight {
+    font: var(--font-nav-strong);
+    color: var(--blue-700);
+}
