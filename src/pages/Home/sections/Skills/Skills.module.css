@@ -1,3 +1,58 @@
 .section {
     /*min-height: 100vh;*/
 }
+
+.category {
+    font: var(--font-h1);
+}
+
+.skill {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.categoryLabel {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    border-radius: var(--radius-lg);
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    padding: 4px 12px;
+    font: var(--font-body1);
+}
+
+.text {
+    font: var(--font-body1);
+    font-size: 1.5rem;
+}
+
+.textSmall {
+    font: var(--font-body1);
+    font-size: 1.0rem;
+}
+
+.textBig {
+    font: var(--font-body1);
+    font-size: 2.5rem;
+}

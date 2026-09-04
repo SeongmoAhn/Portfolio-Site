@@ -1,9 +1,12 @@
 import type {SkillCategory, SkillTag} from "../types";
+import languageIcon from "../assets/icons/lui1.png"
+import frontendIcon from "../assets/icons/lui2.png"
+import backendIcon from "../assets/icons/lui3.png"
 
 export const skillCategories: SkillCategory[] = [
   {
     category: "Language",
-    icon: "code",
+    icon: `${languageIcon}`,
     items: [
       { name: "TypeScript", bgColor: "#4C7DD6" },
       { name: "JavaScript", textColor: "var(--gray-900)", bgColor: "#E0D25C" },
@@ -14,7 +17,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: "Frontend",
-    icon: "html",
+    icon: `${frontendIcon}`,
     items: [
       { name: "Next.js / React", bgColor: "#1A1A1A" },
       { name: "Zustand", bgColor: "#4A4A4A" },
@@ -30,7 +33,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: "Backend",
-    icon: "server",
+    icon: `${backendIcon}`,
     items: [
       { name: "Django", bgColor: "#1E3D2B" },
       { name: "Spring (Boot)", bgColor: "#8CB86E" },
