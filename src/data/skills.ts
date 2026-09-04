@@ -1,4 +1,4 @@
-import type {SkillCategory} from "../types";
+import type {SkillCategory, SkillTag} from "../types";
 
 export const skillCategories: SkillCategory[] = [
   {
@@ -40,3 +40,5 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
 ];
+
+export const allSkills: SkillTag[] = skillCategories.flatMap((c) => c.items);

@@ -9,11 +9,11 @@ export interface NavItem {
 export interface SkillCategory {
   category: string;
   icon: string;
-  items: SkillItem[];
+  items: SkillTag[];
 }
 
 // 스킬 태그
-export interface SkillItem {
+export interface SkillTag {
   name: string;
   textColor?: string;
   bgColor: string;
@@ -26,4 +26,14 @@ export interface ContactItem {
   content: string;
   href: string;
   icon?: string;
+}
+
+// 프로젝트
+export interface Project {
+  name: string;
+  period: string;
+  summary: string;
+  description: string[];
+  techStack: SkillTag[];
+  readmePath: string;
 }
