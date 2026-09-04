@@ -18,3 +18,12 @@ export interface SkillItem {
   textColor?: string;
   bgColor: string;
 }
+
+// 연락처
+export interface ContactItem {
+  type: "phone" | "email" | "github" | "blog" | "linkedin";
+  name: string;
+  content: string;
+  href: string;
+  icon?: string;
+}
