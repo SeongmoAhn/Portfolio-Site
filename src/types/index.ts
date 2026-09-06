@@ -33,6 +33,7 @@ export interface Project {
   name: string;
   period: string;
   summary: string;
+  role: string;
   description: string[];
   techStack: SkillTag[];
   readmePath: string;

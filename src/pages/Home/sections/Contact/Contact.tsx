@@ -12,8 +12,8 @@ export default function Contact() {
   const external_links = ["github", "linkedin"]
 
   return (
-    <section id="contact" className={`${styles.section} section`}>
-      <h2>Contact</h2>
+    <section id="contact" className={`${styles.section} section container`}>
+      <h2>CONTACT</h2>
 
       <ul>
         {displayItems.map((item) => (
