@@ -76,5 +76,6 @@ ol {
 
 .section {
     min-height: 100vh;
+    padding-top: calc(var(--header-height) * 0.3);
     scroll-margin-top: var(--header-height);
 }

@@ -4,7 +4,7 @@ import profileImg from '../../../../assets/images/profile.png'
 export default function About() {
   return (
     <section id="about" className={`${styles.section} section container`}>
-      <h2 className={styles.category}>About</h2>
+      <h2 className={styles.title}>ABOUT</h2>
 
       <div className={styles.profile}>
         <div className={styles.content}>
