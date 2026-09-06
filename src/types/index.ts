@@ -22,8 +22,9 @@ export interface SkillTag {
 // 연락처
 export interface ContactItem {
   type: "phone" | "email" | "github" | "blog" | "linkedin";
-  name: string;
+  label: string;
   content: string;
+  description: string;
   href: string;
   icon?: string;
 }
