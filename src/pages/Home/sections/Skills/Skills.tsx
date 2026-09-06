@@ -5,7 +5,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className={`${styles.section} section container`}>
-      <h2 className={styles.category}>Skills</h2>
+      <h2 className={styles.title}>SKILLS</h2>
 
       {skillCategories.map((category) => (
         <div key={category.category} className={styles.skill}>
@@ -16,7 +16,6 @@ export default function Skills() {
 
           <ul className={styles.skills}>
             {category.items.map((item) => (
-
               <li
                 key={item.name}
                 style={{

@@ -2,8 +2,9 @@
     /*min-height: 100vh;*/
 }
 
-.category {
+.title {
     font: var(--font-h1);
+    margin-bottom: 2rem;
 }
 
 .skill {
@@ -27,6 +28,11 @@
     border-radius: var(--radius-sm);
 }
 
+.text {
+    font: var(--font-body1);
+    font-size: 1.5rem;
+}
+
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -40,19 +46,5 @@
     text-align: center;
     padding: 4px 12px;
     font: var(--font-body1);
-}
-
-.text {
-    font: var(--font-body1);
-    font-size: 1.5rem;
-}
-
-.textSmall {
-    font: var(--font-body1);
-    font-size: 1.0rem;
-}
-
-.textBig {
-    font: var(--font-body1);
-    font-size: 2.5rem;
+    font-weight: 600;
 }
