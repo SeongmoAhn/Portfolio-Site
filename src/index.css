@@ -75,12 +75,6 @@ ol {
 }
 
 .section {
+    min-height: 100vh;
     scroll-margin-top: var(--header-height);
-}
-
-.content {
-
-}
-
-.profileImage {
 }
