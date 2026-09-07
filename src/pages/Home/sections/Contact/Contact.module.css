@@ -1,7 +1,3 @@
-.section {
-    min-height: 80vh;
-}
-
 .title {
     font: var(--font-h1);
 }

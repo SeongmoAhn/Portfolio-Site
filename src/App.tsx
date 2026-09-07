@@ -1,5 +1,7 @@
 import Header from './components/common/Header/Header.tsx'
 import Footer from './components/common/Footer/Footer.tsx'
+import TopButton from './components/common/TopButton/TopButton.tsx'
+import ContactButton from './components/common/ContactButton/ContactButton.tsx'
 import Home from './pages/Home/Home.tsx'
 import Archive from './pages/Archive/Archive.tsx'
 import {Routes, Route} from "react-router-dom"
@@ -18,6 +20,8 @@ function App() {
       </main>
 
       <Footer/>
+      <TopButton/>
+      <ContactButton/>
     </div>
   )
 }

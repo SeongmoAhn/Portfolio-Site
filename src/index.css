@@ -75,7 +75,8 @@ ol {
 }
 
 .section {
-    /*min-height: 100vh;*/
+    min-height: calc(100vh - var(--header-height));
     padding-top: calc(var(--header-height) * 0.3);
+    padding-bottom: 4rem;
     scroll-margin-top: var(--header-height);
 }
