@@ -41,3 +41,24 @@ export interface Project {
   githubUrl?: string;
   imageUrl?: string;
 }
+
+// Archive 글
+export interface ArchivePost {
+  id: string;
+  title: string;
+  body: string;
+  code: string | null;
+  code_language: string | null;
+  tags: string[];
+  resolved: boolean;
+  created_at: string;
+  answer_count: number;
+}
+
+// Archive 답변
+export interface ArchiveAnswer {
+  id: string;
+  post_id: string;
+  body: string;
+  created_at: string;
+}

@@ -1,0 +1,247 @@
+.section {
+}
+
+.title {
+    font: var(--font-h1);
+    margin-bottom: 2rem;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filterChip {
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-pill);
+    padding: 8px 16px;
+    font: var(--font-small);
+    font-weight: 600;
+    color: var(--gray-500);
+    background: var(--gray-0);
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.filterChipActive {
+    border-color: var(--blue-500);
+    color: var(--blue-700);
+    background: var(--blue-50);
+}
+
+.writeButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    background: var(--blue-700);
+    color: var(--gray-0);
+    font: var(--font-small);
+    font-weight: 700;
+    transition: background-color 0.15s ease;
+}
+
+.writeButton:hover {
+    background: var(--blue-900);
+}
+
+.message {
+    font: var(--font-body2);
+    color: var(--gray-500);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    background: var(--gray-0);
+    transition: border-color 0.15s ease;
+}
+
+.card:hover {
+    border-color: var(--blue-500);
+}
+
+.cardMain {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cardHeader {
+    padding-right: 96px;
+}
+
+.cardTitle {
+    font: var(--font-h3);
+    margin-bottom: 4px;
+}
+
+.answerCount {
+    font: var(--font-small);
+    color: var(--gray-500);
+}
+
+.cardBody {
+    font: var(--font-body3);
+    color: var(--gray-700);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font: var(--font-small);
+    color: var(--blue-700);
+}
+
+.date {
+    font: var(--font-small);
+    color: var(--gray-500);
+}
+
+.statusButton {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.statusCircle {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--gray-300);
+    color: var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.statusCircleDone {
+    border-color: var(--blue-500);
+    color: var(--blue-500);
+}
+
+.statusLabel {
+    font: var(--font-small);
+    color: var(--gray-500);
+}
+
+.statusLabelDone {
+    color: var(--blue-700);
+    font-weight: 600;
+}
+
+.confirmText {
+    font: var(--font-body1);
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.confirmSubtext {
+    font: var(--font-small);
+    color: var(--gray-500);
+    margin-top: 8px;
+}
+
+.confirmPasswordInput {
+    width: 100%;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    padding: 10px 16px;
+    font: var(--font-body3);
+    color: var(--gray-900);
+    margin-top: 16px;
+}
+
+.passwordError {
+    display: block;
+    font: var(--font-small);
+    color: #c0503c;
+    margin-top: 6px;
+}
+
+.confirmActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.cancelButton {
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-300);
+    color: var(--gray-700);
+    font: var(--font-small);
+    font-weight: 600;
+}
+
+.saveButton {
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    background: var(--blue-700);
+    color: var(--gray-0);
+    font: var(--font-small);
+    font-weight: 700;
+    transition: background-color 0.15s ease;
+}
+
+.saveButton:hover {
+    background: var(--blue-900);
+}
+
+@media (max-width: 720px) {
+    .card {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .cardHeader {
+        padding-right: 0;
+    }
+
+    .statusButton {
+        position: static;
+        flex-direction: row;
+        align-self: flex-end;
+    }
+}

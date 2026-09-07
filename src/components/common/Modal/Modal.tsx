@@ -6,9 +6,10 @@ interface ModalProps {
   title: string;
   onClose: () => void;
   children: ReactNode;
+  maxWidth?: number;
 }
 
-export default function Modal({title, onClose, children}: ModalProps) {
+export default function Modal({title, onClose, children, maxWidth}: ModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -23,7 +24,11 @@ export default function Modal({title, onClose, children}: ModalProps) {
 
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={styles.modal}
+        style={maxWidth ? {maxWidth} : undefined}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
           <button className={styles.closeButton} onClick={onClose} aria-label="닫기">

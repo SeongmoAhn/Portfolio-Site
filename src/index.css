@@ -64,6 +64,13 @@ button {
     cursor: pointer;
 }
 
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
 ul,
 ol {
     list-style: none;
