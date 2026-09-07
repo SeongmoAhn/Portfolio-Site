@@ -8,31 +8,37 @@ export default function About() {
 
       <div className={styles.profile}>
         <div className={styles.content}>
-          <p className={styles.textSmall}>안녕하세요.</p>
-          <p className={styles.textBig}>본질에 집중하는 백엔드 개발자</p>
-          <p className={styles.textBig}>안성모<span className={styles.textSmall}> 입니다.</span></p>
+          <span className={styles.eyebrow}>안녕하세요</span>
+          <p className={styles.textBig}>
+            본질에 집중하는 백엔드 개발자<br/>
+            안성모<span className={styles.textBigMuted}>입니다.</span>
+          </p>
 
-          <div>
-            <p className={styles.textSmall}>학력</p>
-            <p className={styles.text}>MIT 컴퓨터공학과 졸업</p>
-          </div>
+          <div className={styles.info}>
+            <div className={styles.infoRow}>
+              <span className={styles.infoLabel}>학력</span>
+              <p className={styles.infoValue}>MIT 컴퓨터공학과 졸업</p>
+            </div>
 
-          <div>
-            <p className={styles.textSmall}>자격증</p>
-            <p className={styles.text}>외과 전문의 면허</p>
-            <p className={styles.text}>합기도 3단</p>
-            <p className={styles.text}>태권도 1단</p>
-            <p className={styles.text}>운전 면허 1종 보통</p>
-          </div>
+            <div className={styles.infoRow}>
+              <span className={styles.infoLabel}>자격증</span>
+              <div className={styles.infoValue}>
+                <p>외과 전문의 면허</p>
+                <p>합기도 3단</p>
+                <p>태권도 1단</p>
+                <p>운전 면허 1종 보통</p>
+              </div>
+            </div>
 
-          <div>
-            <p className={styles.textSmall}>이메일</p>
-            <p className={styles.text}>asm0619@gmail.com</p>
+            <div className={styles.infoRow}>
+              <span className={styles.infoLabel}>이메일</span>
+              <p className={styles.infoValue}>asm0619@gmail.com</p>
+            </div>
           </div>
         </div>
 
         <div className={styles.profileImage}>
-          <img src={profileImg} width="300" alt="프로필 이미지"/>
+          <img src={profileImg} alt="프로필 이미지"/>
         </div>
       </div>
     </section>
