@@ -38,4 +38,6 @@ export interface Project {
   description: string[];
   techStack: SkillTag[];
   readmePath: string;
+  githubUrl?: string;
+  imageUrl?: string;
 }

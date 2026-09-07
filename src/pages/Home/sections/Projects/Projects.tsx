@@ -1,16 +1,27 @@
+import {useState} from "react";
 import styles from "./Projects.module.css";
 import {projectItems} from "../../../../data/projects.ts";
+import type {Project} from "../../../../types";
+import ReadmeModal from "./ReadmeModal";
+import githubIcon from "../../../../assets/icons/github.svg";
 
 export default function Projects() {
+  const [readmeProject, setReadmeProject] = useState<Project | null>(null);
+
   return (
+    // 프로젝트 섹션
     <section id="projects" className={`${styles.section} section container`}>
       <h2 className={styles.title}>PROJECTS</h2>
 
       <div className={styles.grid}>
+        {/*projectItems에서 프로젝트 정보를 하나씩 읽어서 map()*/}
         {projectItems.map((project, index) => (
           <div key={`${project.name}-${index}`} className={styles.card}>
-            <h3 className={styles.name}>{project.name}</h3>
-            <span className={styles.period}>{project.period}</span>
+            {/*프로젝트 소개 부분*/}
+            <div className={styles.top}>
+              <h3 className={styles.name}>{project.name}</h3>
+              <span className={styles.period}>{project.period}</span>
+            </div>
             <p className={styles.summary}>{project.summary}</p>
 
             <div className={styles.field}>
@@ -27,6 +38,9 @@ export default function Projects() {
               </ul>
             </div>
 
+            <hr className={styles.divider}/>
+
+            {/*기술 스택 부분*/}
             <div className={styles.field}>
               <span className={styles.label}>기술 스택</span>
               <ul className={styles.techStack}>
@@ -42,9 +56,48 @@ export default function Projects() {
                 ))}
               </ul>
             </div>
+
+            <hr className={styles.divider}/>
+
+            {/*READ, Git, Image 등 참고자료 부분*/}
+            <div className={styles.field}>
+              <span className={styles.label}>참고 자료</span>
+              <div className={styles.references}>
+                <button
+                  type="button"
+                  className={styles.refButton}
+                  onClick={() => setReadmeProject(project)}
+                >
+                  README
+                </button>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.refButton}
+                  >
+                    <img src={githubIcon} alt="" className={styles.refIcon}/>
+                    GitHub
+                  </a>
+                )}
+              </div>
+              {project.imageUrl && (
+                <img
+                  src={project.imageUrl}
+                  alt={`${project.name} 스크린샷`}
+                  className={styles.previewImage}
+                />
+              )}
+            </div>
+
           </div>
         ))}
       </div>
+
+      {readmeProject && (
+        <ReadmeModal project={readmeProject} onClose={() => setReadmeProject(null)}/>
+      )}
     </section>
   );
 }
