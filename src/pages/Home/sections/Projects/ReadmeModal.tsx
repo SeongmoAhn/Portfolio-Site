@@ -15,10 +15,16 @@ export default function ReadmeModal({project, onClose}: ReadmeModalProps) {
   const [status, setStatus] = useState<"loading" | "done" | "error">("loading");
 
   useEffect(() => {
+    const readmePath = project.readmePath;
+    if (!readmePath) {
+      setStatus("error");
+      return;
+    }
+
     let cancelled = false;
     setStatus("loading");
 
-    fetch(project.readmePath)
+    fetch(readmePath)
       .then((res) => {
         if (!res.ok) throw new Error("README를 불러오지 못했습니다.");
         return res.text();
