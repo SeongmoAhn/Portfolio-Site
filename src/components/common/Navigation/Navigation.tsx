@@ -7,8 +7,10 @@ export default function Navigation() {
   const navigate = useNavigate()
   const location = useLocation()
   const [activeId, setActiveId] = useState(navItems[0].id)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const handleScrollClick = (id: string) => {
+    setMenuOpen(false)
     if (location.pathname === "/") { // 이미 Home 페이지에 있는 경우
       const target = document.getElementById(id)
       target?.scrollIntoView({behavior: "smooth"})
@@ -43,7 +45,18 @@ export default function Navigation() {
 
   return (
     <nav>
-      <ul className={styles.list}>
+      <button
+        type="button"
+        className={styles.menuButton}
+        aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        <span/>
+        <span/>
+        <span/>
+      </button>
+
+      <ul className={`${styles.list} ${menuOpen ? styles.listOpen : ""}`}>
         {navItems.map(item => {
           const isActive = item.type === "route"
             ? location.pathname.startsWith(`/${item.id}`)
@@ -55,6 +68,7 @@ export default function Navigation() {
                 <Link
                   to={`/${item.id}`}
                   className={`${styles.archive} ${isActive ? styles.active : ""}`}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
                 </Link>

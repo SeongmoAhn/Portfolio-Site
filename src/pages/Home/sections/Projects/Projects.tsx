@@ -63,13 +63,15 @@ export default function Projects() {
             <div className={styles.field}>
               <span className={styles.label}>참고 자료</span>
               <div className={styles.references}>
-                <button
-                  type="button"
-                  className={styles.refButton}
-                  onClick={() => setReadmeProject(project)}
-                >
-                  README
-                </button>
+                {project.readmePath && (
+                  <button
+                    type="button"
+                    className={styles.refButton}
+                    onClick={() => setReadmeProject(project)}
+                  >
+                    README
+                  </button>
+                )}
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
@@ -81,7 +83,20 @@ export default function Projects() {
                     GitHub
                   </a>
                 )}
+                {project.pdfUrl && (
+                  <a
+                    href={project.pdfUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.refButton}
+                  >
+                    원문 PDF
+                  </a>
+                )}
               </div>
+              {project.refNote && (
+                <p className={styles.refNote}>{project.refNote}</p>
+              )}
               {project.imageUrl && (
                 <img
                   src={project.imageUrl}

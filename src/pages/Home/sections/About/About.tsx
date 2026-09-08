@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import styles from "./About.module.css";
 import profileImg from '../../../../assets/images/profile.png'
 
@@ -57,6 +58,15 @@ export default function About() {
           <img src={profileImg} alt="프로필 이미지"/>
         </div>
       </div>
+
+      <Link to="/archive" className={styles.archivePromo}>
+        <div>
+          <span className={styles.archivePromoLabel}>ARCHIVE</span>
+          <p className={styles.archivePromoText}>나의 문제 해결 기록</p>
+          <p className={styles.archivePromoSubtext}>개발, 공부, 일상에서 마주친 문제들을 하나씩 풀어가는 과정을 기록합니다.</p>
+        </div>
+        <span className={styles.archivePromoButton}>보러가기 →</span>
+      </Link>
     </section>
   )
     ;

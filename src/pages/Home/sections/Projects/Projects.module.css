@@ -39,19 +39,25 @@
 
 .top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .name {
     font: var(--font-h3);
     font-size: 1.4rem;
+    flex: 2;
+    min-width: 0;
 }
 
 .period {
     font: var(--font-small);
     font-size: 0.95rem;
     color: var(--gray-500);
+    text-align: right;
+    flex: 1;
+    min-width: 0;
 }
 
 .summary {
@@ -149,6 +155,12 @@
 .refIcon {
     width: 14px;
     height: 14px;
+}
+
+.refNote {
+    font: var(--font-small);
+    font-size: 0.9rem;
+    color: var(--gray-500);
 }
 
 .previewImage {

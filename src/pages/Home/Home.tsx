@@ -1,6 +1,6 @@
 import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
-// import Experience from "./sections/Experience/Experience";
+import Experience from "./sections/Experience/Experience";
 import Projects from "./sections/Projects/Projects";
 import Contact from "./sections/Contact/Contact";
 import {useLocation} from "react-router-dom";
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       <About />
-      {/*<Experience />*/}
+      <Experience />
       <Skills />
       <Projects />
       <Contact />

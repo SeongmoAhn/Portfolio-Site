@@ -14,14 +14,21 @@ export default function Skills() {
 
             <ul className={styles.skills}>
               {category.items.map((item) => (
-                <li
-                  key={item.name}
-                  style={{
-                    color: item.textColor ?? "var(--gray-0)",
-                    backgroundColor: item.bgColor
-                  }}
-                  className={styles.tag}
-                >{item.name}</li>
+                <li key={item.name} className={styles.tag}>
+                  {item.icon ? (
+                    <span className={styles.tagIcon}>
+                      <img src={item.icon} alt=""/>
+                    </span>
+                  ) : (
+                    <span
+                      className={styles.tagIconFallback}
+                      style={{backgroundColor: item.bgColor, color: item.textColor ?? "var(--gray-0)"}}
+                    >
+                      {item.name.charAt(0)}
+                    </span>
+                  )}
+                  <span className={styles.tagLabel}>{item.name}</span>
+                </li>
               ))}
             </ul>
           </div>

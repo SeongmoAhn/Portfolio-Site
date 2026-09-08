@@ -17,6 +17,7 @@ export interface SkillTag {
   name: string;
   textColor?: string;
   bgColor: string;
+  icon?: string;
 }
 
 // 연락처
@@ -37,9 +38,19 @@ export interface Project {
   role: string;
   description: string[];
   techStack: SkillTag[];
-  readmePath: string;
+  readmePath?: string;
   githubUrl?: string;
+  pdfUrl?: string;
   imageUrl?: string;
+  refNote?: string;
+}
+
+// 경력/활동 이력
+export interface ExperienceItem {
+  period: string;
+  title: string;
+  subtitle?: string;
+  badge?: string;
 }
 
 // Archive 글
