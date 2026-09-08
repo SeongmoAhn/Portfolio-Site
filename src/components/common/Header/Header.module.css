@@ -16,7 +16,8 @@
 
 .logo {
     display: flex;
-    /*justify-content: space-between;*/
     align-items: center;
     font: var(--font-logo);
+    gap: 8px;
+    cursor: pointer;
 }

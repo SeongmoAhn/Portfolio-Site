@@ -8,31 +8,47 @@ export default function About() {
 
       <div className={styles.profile}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>안녕하세요</span>
-          <p className={styles.textBig}>
-            본질에 집중하는 백엔드 개발자<br/>
-            안성모<span className={styles.textBigMuted}>입니다.</span>
-          </p>
+          <div className={styles.row}>
+            <span className={styles.eyebrow}>안녕하세요</span>
+          </div>
 
-          <div className={styles.info}>
-            <div className={styles.infoRow}>
-              <span className={styles.infoLabel}>학력</span>
-              <p className={styles.infoValue}>MIT 컴퓨터공학과 졸업</p>
-            </div>
+          <div className={styles.row}>
+            <p className={styles.textBig}>
+              본질에 집중하는 백엔드 개발자<br/>
+              안성모<span className={styles.textBigMuted}>입니다.</span>
+            </p>
+          </div>
 
-            <div className={styles.infoRow}>
-              <span className={styles.infoLabel}>자격증</span>
-              <div className={styles.infoValue}>
-                <p>외과 전문의 면허</p>
-                <p>합기도 3단</p>
-                <p>태권도 1단</p>
-                <p>운전 면허 1종 보통</p>
+          <div className={styles.row}>
+            <p className={styles.bio}>
+              동작 원리를 파고드는 걸 좋아하는 백엔드 개발자입니다.
+              왜 그렇게 동작하는지 이해해야 코드도, 문제도 제대로 다룰 수 있다고 생각합니다.
+            </p>
+          </div>
+
+          <div className={styles.row}>
+            <div className={styles.info}>
+              <div className={styles.infoRow}>
+                <span className={styles.infoLabel}>학력</span>
+                <p className={styles.infoValue}>숭실대학교 컴퓨터학부</p>
+              </div>
+
+              <div className={styles.infoRow}>
+                <span className={styles.infoLabel}>자격증</span>
+                <div className={styles.infoValue}>
+                  <p>정보처리기사</p>
+                  <p>SQLD</p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className={styles.infoRow}>
-              <span className={styles.infoLabel}>이메일</span>
-              <p className={styles.infoValue}>asm0619@gmail.com</p>
+          <div className={styles.row}>
+            <div className={styles.info}>
+              <div className={styles.infoRow}>
+                <span className={styles.infoLabel}>이메일</span>
+                <p className={styles.infoValue}>asm0619@gmail.com</p>
+              </div>
             </div>
           </div>
         </div>
@@ -42,5 +58,6 @@ export default function About() {
         </div>
       </div>
     </section>
-  );
+  )
+    ;
 }

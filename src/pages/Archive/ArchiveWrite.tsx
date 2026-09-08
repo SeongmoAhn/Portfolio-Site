@@ -1,7 +1,7 @@
-import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 import styles from "./ArchiveWrite.module.css";
-import {createPost} from "../../lib/archive";
+import {createPost, fetchPost, updatePost} from "../../lib/archive";
 import {ARCHIVE_PASSWORD} from "../../lib/archivePassword";
 
 const languages = [
@@ -11,6 +11,8 @@ const languages = [
 
 export default function ArchiveWrite() {
   const navigate = useNavigate();
+  const {id} = useParams<{ id: string }>();
+  const isEdit = Boolean(id);
 
   const [title, setTitle] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +22,24 @@ export default function ArchiveWrite() {
   const [code, setCode] = useState("");
   const [tagInput, setTagInput] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [loading, setLoading] = useState(isEdit);
+
+  useEffect(() => {
+    if (!id) return;
+    fetchPost(id)
+      .then((post) => {
+        if (!post) {
+          navigate("/archive");
+          return;
+        }
+        setTitle(post.title);
+        setBody(post.body);
+        setCode(post.code ?? "");
+        setCodeLanguage(post.code_language ?? "");
+        setTagInput(post.tags.join(", "));
+      })
+      .finally(() => setLoading(false));
+  }, [id, navigate]);
 
   const canSave = title.trim() && body.trim() && password.trim();
 
@@ -39,7 +59,20 @@ export default function ArchiveWrite() {
         .map((tag) => tag.trim())
         .filter(Boolean);
 
-      const id = await createPost({
+      if (isEdit && id) {
+        await updatePost(id, {
+          title: title.trim(),
+          body: body.trim(),
+          code,
+          codeLanguage,
+          tags,
+          password: ARCHIVE_PASSWORD,
+        });
+        navigate(`/archive/${id}`);
+        return;
+      }
+
+      const newId = await createPost({
         title: title.trim(),
         body: body.trim(),
         code,
@@ -48,11 +81,19 @@ export default function ArchiveWrite() {
         password: ARCHIVE_PASSWORD,
       });
 
-      navigate(`/archive/${id}`);
+      navigate(`/archive/${newId}`);
     } finally {
       setSubmitting(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className={`${styles.section} section container`}>
+        <p className={styles.message}>불러오는 중...</p>
+      </div>
+    );
+  }
 
   return (
     <div className={`${styles.section} section container`}>
@@ -125,7 +166,13 @@ export default function ArchiveWrite() {
           className={styles.tagInput}
         />
         <div className={styles.actions}>
-          <button type="button" className={styles.cancelButton} onClick={() => navigate("/archive")}>취소</button>
+          <button
+            type="button"
+            className={styles.cancelButton}
+            onClick={() => navigate(isEdit && id ? `/archive/${id}` : "/archive")}
+          >
+            취소
+          </button>
           <button
             type="button"
             className={styles.saveButton}

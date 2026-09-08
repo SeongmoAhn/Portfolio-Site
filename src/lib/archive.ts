@@ -74,3 +74,54 @@ export async function createAnswer(postId: string, body: string, password: strin
 
   if (error) throw error;
 }
+
+interface UpdatePostInput {
+  title: string;
+  body: string;
+  code: string;
+  codeLanguage: string;
+  tags: string[];
+  password: string;
+}
+
+export async function updatePost(id: string, input: UpdatePostInput): Promise<void> {
+  const {error} = await supabase.rpc("update_post", {
+    p_id: id,
+    p_title: input.title,
+    p_body: input.body,
+    p_code: input.code || null,
+    p_code_language: input.codeLanguage || null,
+    p_tags: input.tags,
+    p_password: input.password,
+  });
+
+  if (error) throw error;
+}
+
+export async function deletePost(id: string, password: string): Promise<void> {
+  const {error} = await supabase.rpc("delete_post", {
+    p_id: id,
+    p_password: password,
+  });
+
+  if (error) throw error;
+}
+
+export async function updateAnswer(id: string, body: string, password: string): Promise<void> {
+  const {error} = await supabase.rpc("update_answer", {
+    p_id: id,
+    p_body: body,
+    p_password: password,
+  });
+
+  if (error) throw error;
+}
+
+export async function deleteAnswer(id: string, password: string): Promise<void> {
+  const {error} = await supabase.rpc("delete_answer", {
+    p_id: id,
+    p_password: password,
+  });
+
+  if (error) throw error;
+}

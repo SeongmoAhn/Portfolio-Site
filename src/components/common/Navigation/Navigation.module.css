@@ -1,10 +1,16 @@
 .list {
     display: flex;
-    gap: 24px;
+    gap: 50px;
     align-items: center;
+    font: var(--font-nav);
+    font-size: 1rem;
 }
 
-.highlight {
+.archive {
     font: var(--font-nav-strong);
+    font-size: 1rem;
+}
+
+.active {
     color: var(--blue-700);
 }

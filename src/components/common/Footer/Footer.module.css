@@ -1,4 +1,10 @@
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    min-height: var(--footer-height);
+    box-sizing: border-box;
     background-color: var(--gray-100);
     text-align: center;
     padding: 32px;

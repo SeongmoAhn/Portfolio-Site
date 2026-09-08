@@ -1,26 +1,36 @@
 .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    gap: 16px;
 }
 
 .title {
     font: var(--font-h1);
-    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    /*margin-top: 3rem;*/
+    margin-bottom: 2.5rem;
 }
 
 .profile {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
-    gap: 48px;
+    gap: 200px;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 36px;
 }
 
 .eyebrow {
     font: var(--font-h2);
+    font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     color: var(--blue-700);
@@ -28,7 +38,7 @@
 
 .textBig {
     font: var(--font-display);
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--gray-900);
 }
 
@@ -36,22 +46,32 @@
     color: var(--gray-500);
 }
 
+.bio {
+    font: var(--font-body1);
+    font-size: 1.25rem;
+    color: var(--gray-700);
+    max-width: 640px;
+}
+
 .info {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 36px;
+    max-width: 640px;
 }
 
 .infoRow {
     display: flex;
     gap: 24px;
-    padding: 16px 0;
+    padding: 18px 0;
     border-top: 1px solid var(--gray-300);
 }
 
 .infoLabel {
     font: var(--font-small);
+    font-size: 0.95rem;
     color: var(--gray-500);
-    width: 80px;
+    width: 90px;
     flex-shrink: 0;
 }
 
@@ -60,12 +80,25 @@
     flex-direction: column;
     gap: 4px;
     font: var(--font-body2);
+    font-size: 1.125rem;
     color: var(--gray-900);
 }
 
+.solvedBadgeLink {
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.solvedBadge {
+    display: block;
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
 .profileImage {
-    flex-shrink: 0;
-    width: 300px;
+    width: 100%;
     aspect-ratio: 4 / 5;
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-300);
@@ -81,11 +114,16 @@
 
 @media (max-width: 720px) {
     .profile {
-        flex-direction: column-reverse;
+        grid-template-columns: 1fr;
     }
 
     .profileImage {
         width: 100%;
         max-width: 300px;
+        justify-self: center;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
     }
 }

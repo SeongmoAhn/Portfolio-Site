@@ -4,6 +4,13 @@
     gap: 24px;
 }
 
+.message {
+    font: var(--font-body2);
+    color: var(--gray-500);
+    text-align: center;
+    padding: 40px 0;
+}
+
 .field {
     display: flex;
     flex-direction: column;

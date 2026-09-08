@@ -21,6 +21,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/archive" element={<ArchiveList/>}/>
           <Route path="/archive/new" element={<ArchiveWrite/>}/>
+          <Route path="/archive/:id/edit" element={<ArchiveWrite/>}/>
           <Route path="/archive/:id" element={<ArchiveDetail/>}/>
         </Routes>
       </main>
